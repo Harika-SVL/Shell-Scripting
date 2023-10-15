@@ -14,12 +14,12 @@
 
 [Refer here : 'https://www.youtube.com/watch?v=me2s3mTNwGo']
 
-#### Example of Hello world !
+### Example of Hello world!
 
-* Create a file _helloworld.sh_
+* Create a file _**helloworld.sh**_
 ```script
 #!/bin/bash
 
 echo "Hello World!"
 ```
-* Now execute the script using `bash` _bash helloworld.sh_
+* Now execute the script using `bash` _**bash helloworld.sh_**
