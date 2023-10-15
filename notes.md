@@ -18,7 +18,7 @@
 
 * Create a folder to write the scripts in one place
 * Create a file _**helloworld.sh**_
-```
+```bash
 #!/bin/bash
 
 echo "Hello World!"
