@@ -7,4 +7,19 @@
 * RedHat/ Ubuntu (Virtual machines)
 
 => Installation 
-    Refer Here : 'https://www.youtube.com/watch?v=mRILfUNbsIo'
+    
+[Refer Here : 'https://www.youtube.com/watch?v=mRILfUNbsIo']
+
+=> Creating of AWS EC2 instance
+
+[Refer here : 'https://www.youtube.com/watch?v=me2s3mTNwGo']
+
+#### Example of Hello world !
+
+* Create a file _helloworld.sh_
+```script
+#!/bin/bash
+
+echo "Hello World!"
+```
+* Now execute the script using `bash` _bash helloworld.sh_
