@@ -22,4 +22,4 @@
 
 echo "Hello World!"
 ```
-* Now execute the script using `bash` _**bash helloworld.sh_**
+* Now execute the script using `bash` **bash helloworld.sh**
