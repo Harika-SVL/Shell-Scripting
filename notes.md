@@ -16,10 +16,12 @@
 
 ### Example of Hello world!
 
+* Create a folder to write the scripts in one place
 * Create a file _**helloworld.sh**_
-```script
+```
 #!/bin/bash
 
 echo "Hello World!"
 ```
-* Now execute the script using `bash` **bash helloworld.sh**
+* Now execute the script using `bash` _**bash helloworld.sh**_
+
