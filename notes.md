@@ -80,4 +80,30 @@ ls -l helloworld.py
 ### Comments
 
 * Comments is nothing more than bit of text explaining what you are doing
-* In shell the character which we use to denote comments is #
+* In shell the character which we use to denote comments is _**#**_
+```
+#!/bin/bash
+
+# Print the text to the terminal
+echo "Hello World!"
+```
+               _**OR**_
+```
+#!/bin/bash
+
+echo "Hello World!"  # Print the text to the terminal
+```
+* Script headers with fields :
+    * Author
+    * Version
+    * Date
+    * Description
+    * Usage
+```
+#!/bin/bash
+
+#####################################################################
+#
+#
+
+```
