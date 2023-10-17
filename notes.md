@@ -113,3 +113,10 @@ echo "Hello World!"  # Print the text to the terminal
 # Print the text to the terminal
 echo "Hello World!"
 ```
+### Verbosity
+
+* Balancing act between not too much but also too less explanation
+* Types :
+    * Verbosity in Comments - ensure your comments are punctual and smaller
+    * Verbosity in Commands - ensure to use long variants in commands instead of single letter , e.g. ls -recursive instead of ls -R,where they both give same results and long variant is readable
+    * Verbosity in Command outputs
