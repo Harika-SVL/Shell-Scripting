@@ -39,7 +39,7 @@ bash helloworld.sh
 
 ### What is '#!/bin/bash' ?
 
-* It is called as _**Shebang**_, which tells the linux system for which binary to be used for executin the script
+* It is called as _**Shebang**_, which tells the linux system for which binary to be used for executing the script
 * For example, `#!/bin/bash`- on bash prompt , `#!/usr/bin/python3`- on using python code
 
 * Let's create a python script  
@@ -87,7 +87,9 @@ ls -l helloworld.py
 # Print the text to the terminal
 echo "Hello World!"
 ```
-               _**OR**_
+
+ _**OR**_
+
 ```
 #!/bin/bash
 
@@ -117,6 +119,6 @@ echo "Hello World!"
 
 * Balancing act between not too much but also too less explanation
 * Types :
-    * Verbosity in Comments - ensure your comments are punctual and smaller
-    * Verbosity in Commands - ensure to use long variants in commands instead of single letter , e.g. ls -recursive instead of ls -R,where they both give same results and long variant is readable
-    * Verbosity in Command outputs
+    * Verbosity in Comments : ensure your comments are punctual and smaller
+    * Verbosity in Commands : ensure to use long variants in commands instead of single letter , e.g. ls -recursive instead of ls -R, where they both give same results and long variant is readable
+    * Verbosity in Command outputs : 
