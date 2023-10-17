@@ -102,7 +102,7 @@ echo "Hello World!"  # Print the text to the terminal
 ```
 #!/bin/bash
 
-#####################################################################
+##################################################################### 
 # Author: Harika
 # Version: v1.0.0
 # Date: Present
