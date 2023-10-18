@@ -218,7 +218,7 @@ echo $(( ${number} + 1 ))
     * variables: lowercase with underscores
 ```
 my_number=6
-message="how are you"
+message="how are you ?"
 ```
 * Constants: UPPERCASE
 ```
@@ -260,12 +260,12 @@ echo "0 = ${0}  1 = ${1}"
 
 * Here ${1} stands for the _first positional argument_
 * Generally we will have two kinds of arguments :
+
    1. Positional arguments
 ```
 cp 1.txt 2.txt 
 # 1.txt & 2.txt are two positional arguments
 ```
-
    2. Named arguments
 
 ```
