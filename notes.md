@@ -145,7 +145,7 @@ echo "Hello World!"
 * Variable is a standard building block in scripting languages, They allow you to store information, so that we can retrieve/change multiple times during the execution of script.
 * Assigning the value variable `<variable_name>=<variable_value>`
 ```
-name="Learning Thoughts"
+name="Quality Thoughts"
 ```
 * Referencing the variable `${variable_name}` or `$variable_name`
 ```
@@ -153,20 +153,22 @@ echo $name
 echo ${name}
 echo "Name == ${name}"
 ```
-* Now lets try to create a simple shell script
+![Alt text](shots/9.PNG)
+
+* Now let's try to create a simple shell script
 ```
 #!/bin/bash
 
 #####################################################################
-# Author: Shaik Khaja Ibrahim
+# Author: Harika
 # Version: v1.0.0
-# Date: 25-Aug-2020
+# Date: Present date
 # Description: This is shell script demonstrating variables
 # Usage: ./variabledemo.sh
 #####################################################################
 
-name="Khaja Ibrahim"
-org_name="Learning Thoughts"
+name="Harika"
+org_name="Quality Thoughts"
 
 # Here we are interpolating the variables
 echo "This is ${name} from ${org_name}"
@@ -176,6 +178,10 @@ number=5
 echo $number + 1
 ```
 * Now execute the script
+
+![Alt text](shots/10.PNG)
+![Alt text](shots/11.PNG)
+
 * Now shell script is treating numbers as text, if we want shell script to consider variable number as integer, we need to use and expression
 ```
 $(( ${number} + 1 ))
@@ -185,15 +191,15 @@ $(( ${number} + 1 ))
 #!/bin/bash
 
 #####################################################################
-# Author: Shaik Khaja Ibrahim
+# Author: Harika
 # Version: v1.0.0
-# Date: 25-Aug-2020
+# Date: Present date
 # Description: This is shell script demonstrating variables
 # Usage: ./variabledemo.sh
 #####################################################################
 
-name="Khaja Ibrahim"
-org_name="Learning Thoughts"
+name="Harika"
+org_name="Quality Thoughts"
 
 # Here we are interpolating the variables
 echo "This is ${name} from ${org_name}"
@@ -205,6 +211,9 @@ echo $number + 1
 echo "lets use arthimetic expression"
 echo $(( ${number} + 1 ))
 ```
+![Alt text](shots/12.PNG)
+![Alt text](shots/13.PNG)
+
 * In shell scripting we following naming conventions, for
     * variables: lowercase with underscores
 ```
@@ -220,7 +229,7 @@ LOCATION="/home"
 SCRIPT_PATH over PATH
 SCRIPT_USER over USER
 ```
-* So far, we have been dealing with static scripts, so let’s introduce the concept of user inputs in shell scripting
+* So far, we have been dealing with static scripts, so let’s introduce the concept of _user inputs_ in shell scripting
 
 ### Basic Inputs
 
@@ -228,14 +237,14 @@ SCRIPT_USER over USER
 ```
 ./<script>.sh Hello
 ```
-* Lets create a script called as printname.sh with the following script
+* Let's create a script called as `printname.sh` with the following script
 ```
 #!/bin/bash
 
 #####################################################################
-# Author: Shaik Khaja Ibrahim
+# Author: Harika
 # Version: v1.0.0
-# Date: 25-Aug-2020
+# Date: Present date
 # Description: This script demonstrates basic user inputs
 # Usage: ./printname.sh <pass name>
 #####################################################################
@@ -245,17 +254,24 @@ echo "Hello ${name}"
 echo "0 = ${0}  1 = ${1}"
 ```
 * Now execute the script
-* Here ${1} stands for the first positional argument
-* Generally we will have two kinds of arguments
-    * positional arguments
+
+![Alt text](shots/14.PNG)
+![Alt text](shots/15.PNG)
+
+* Here ${1} stands for the _first positional argument_
+* Generally we will have two kinds of arguments :
+   1. Positional arguments
 ```
-cp 1.txt 2.txt # 1.txt & 2.txt are two positional arguments
+cp 1.txt 2.txt 
+# 1.txt & 2.txt are two positional arguments
 ```
-* named arguments
+
+   2. Named arguments
+
 ```
 ping --count 4 google.com
 # google.com is a positional argument
-# where as 4 is a named argument as it value for a name called as count
+# where as 4 is a named argument as it is a value for the name called as count
 ```
 * The script shown above is depending on positional arguments
 
