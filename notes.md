@@ -31,9 +31,9 @@ cd scripts
 vi helloworld.sh     # add script
 bash helloworld.sh 
 ```
+![Alt text](shots/1.PNG)
 
-
-
+![Alt text](shots/2.PNG)
 
 * Generally all the scripts will have `.sh` extension
 
@@ -49,6 +49,8 @@ bash helloworld.sh
 
 print("Hello World!")
 ```
+![Alt text](shots/3.PNG)
+
 * Now execute the script using `python3` _**python3 helloworld.py**_
 ```
 mkdir scripts
@@ -56,6 +58,8 @@ cd scripts
 vi helloworld.py     # add script
 python3 helloworld.py 
 ```
+![Alt text](shots/4.PNG)
+
 * To execute we used bash command, but even after having shebang why do we need bash command :
 * To execute the scripts we need file permissions,so let's give file permissions
 ```
@@ -64,12 +68,16 @@ chmod +x helloworld.sh
 ls -l helloworld.sh
 ./helloworld.sh
 ```
+![Alt text](shots/5.PNG)
+
 ```
 ls -l helloworld.py
 chmod +x helloworld.py
 ls -l helloworld.py
 ./helloworld.py
 ```
+![Alt text](shots/6.PNG)
+
 ## Readability
 
 * When writing,aim to make sure the code is as readable as possible
@@ -115,10 +123,17 @@ echo "Hello World!"  # Print the text to the terminal
 # Print the text to the terminal
 echo "Hello World!"
 ```
+![Alt text](shots/7.PNG)
+
 ### Verbosity
 
 * Balancing act between not too much but also too less explanation
 * Types :
     * Verbosity in Comments : ensure your comments are punctual and smaller
-    * Verbosity in Commands : ensure to use long variants in commands instead of single letter , e.g. ls -recursive instead of ls -R, where they both give same results and long variant is readable
-    * Verbosity in Command outputs : 
+    * Verbosity in Commands : ensure to use long variants in commands instead of single letter , e.g. ls --recursive instead of ls -R, where they both give same results and long variant is readable
+
+    ![Alt text](shots/8.PNG)
+    
+    * Verbosity in Command outputs : Build scripts that take two argument -v/-verbose and -q/-quiet. When user runs your script with verbose parameter give detailed information about what is happening & in other case don't display anything or display only absolutely required stuff to the terminal
+
+#### SHELL SCRIPTING : Shell script is a sequence of linux commands that are to be executed in an order
