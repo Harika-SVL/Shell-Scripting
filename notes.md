@@ -320,7 +320,7 @@ echo "Welcome ${name}, You come from ${location}. Welcome to Bash Scripting"
 * Let's understand the terminology of parameter & arguments. They are slightly different
 * Argument is something which you pass to a script.
 * What you define in a script to hold argument value is parameter
-* Let's write a simple script to demonstrate the difference_**argumentparameter.sh**_
+* Let's write a simple script to demonstrate the difference _**argumentparameter.sh**_
 ```
 #!/bin/bash
 
@@ -346,7 +346,7 @@ echo "Parameter 2 is ${parameter_2}"
 
 * The scripts which we have developed so far are non-interactive scripts, because once you pass the values the execution happens
 * Interactive scripts take inputs from users while executing
-* Now let's look at a simple read command which reads the input from the user and stores in a variable called as _REPLY_
+* Now let's look at a simple read command which reads the input from the user and stores in a variable called as _**REPLY**_
 ```
 read 
 hello
@@ -365,7 +365,7 @@ echo $my_name
 ```
 ![Alt text](shots/22.PNG)
 
-* Let's build some interactive script asking questions to the user_**interactivescriptdemo.sh**_
+* Let's build some interactive script asking questions to the user _**interactivescriptdemo.sh**_
 ```
 #!/bin/bash
 
