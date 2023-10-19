@@ -284,7 +284,7 @@ ping --count 4 google.com
 ```
 ./myscript.sh 12 13
 ```
-* The above example consider
+* Consider the above example
 ```
 $0 = ./myscript.sh
 $1 = 12
@@ -298,7 +298,7 @@ $2 = 13
 # Author: Harika
 # Version: v1.0.0
 # Date: Present
-# Description: This script demonstrates positional arguments
+# Description: Script demonstrates positional arguments
 # Usage: ./positionalargdemo.sh <name> <location>
 # 1 positional argument is considered as name
 # 2 positional argument is considered as location
@@ -316,19 +316,19 @@ echo "Welcome ${name}, You come from ${location}. Welcome to Bash Scripting"
 * Let's understand the terminology of parameter & arguments. They are slightly different
 * Argument is something which you pass to a script.
 * What you define in a script to hold argument value is parameter
-* Lets write a simple script to demonstrate the difference
+* Let's write a simple script to demonstrate the difference
 ```
 #!/bin/bash
 
 #####################################################################
-# Author: Shaik Khaja Ibrahim
+# Author: Harika
 # Version: v1.0.0
-# Date: 25-Aug-2020
-# Description: This is shell script demonstrating parameters and arguments
+# Date: Present
+# Description: Shell script demonstrating parameters and arguments
 # Usage: ./argumentparameter.sh <arg-1> <arg-2>
 #####################################################################
 
-# parameter is used to define argument value
+# Parameter is used to define argument value
 parameter_1=$1
 
 parameter_2=$2
@@ -339,27 +339,27 @@ echo "Parameter 2 is ${parameter_2}"
 ```
 * The scripts which we have developed so far are non-interactive scripts, because once you pass the values the execution happens
 * Interactive scripts take inputs from users while executing
-* Now lets look at a simple read command which reads the input from the user and stores in a variable called as REPLY
-* Now lets execute one more simple variation of the read command
-* Lets build some interactive script asking questions to the user
+* Now let's look at a simple read command which reads the input from the user and stores in a variable called as _REPLY_
+* Now let's execute one more simple variation of the read command
+* Let's build some interactive script asking questions to the user
 ```
 #!/bin/bash
 
 #####################################################################
-# Author: Shaik Khaja Ibrahim
+# Author: Harika
 # Version: v1.0.0
-# Date: 26-Aug-2020
-# Description: This is shell script demonstrating interactive scripts
+# Date: Present
+# Description: Shell script demonstrating interactive scripts
 # Usage: ./interactivescriptdemo.sh
 #####################################################################
 
-read -p "Name a superhero which you like? " super_hero
-read -p "Which movie has this role? " movie_super_hero
-read -p "What is your name? " name
-echo "Hi ${name}, Thanks for watching movie ${movie_super_hero} and liking the character ${super_hero}"
+read -p "Name a superhero which you like . " super_hero
+read -p "Which movie has this role ? " movie_super_hero
+read -p "What is your name ? " name
+echo "Hi ${name}, Thanks for watching the movie ${movie_super_hero} and liking the character ${super_hero}"
 ```
-* Now lets execute the script
-* Lets try to come up with script design which acts as a calculator by taking two values and operation as input?
-    * Script will be calculator.sh
+* Now let's execute the script
+* Let's try to come up with script design which acts as a calculator by taking two values and operation as input
+    * Script will be _**calculator.sh**_
     * Operations that will be supported are add,sub,mul,div
-    * It should take two numbers to perform math.
+    * It should take two numbers to perform math
