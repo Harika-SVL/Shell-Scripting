@@ -431,18 +431,21 @@ echo "Hi ${name}, Thanks for watching the movie ${movie_super_hero} and liking t
 #!/bin/bash
 
 name="Quality Thoughts"
-echo "This is from script 1 name= ${name}"
+echo "This is from script-1 name= ${name}"
 ./script2.sh
 ```
 2. _**script2.sh**_
 ```
 #!/bin/bash
 
-echo "This is script2"
+echo "This is script-2"
 echo "Value of name is ${name}"
 ```
 * From script1 let's call script2 and try to see if the variable defined in script1 is available for use in script2
 * let's execute _**script1.sh**_
+
+
+
 * The value of name is not available in script2. The default scope of variable is the same script file.
 * So let's find out if there is any other way to pass the variable from script1 to external scripts
 
@@ -457,10 +460,15 @@ echo "Value of name is ${name}"
 #!/bin/bash
 
 name="Quality Thoughts"
-echo "This is from script 1 name= ${name}"
+echo "This is from script-1 name= ${name}"
 export name
 ./script2.sh
 ```
+* Now execute _**script1.sh**_
+
+
+
+
 ### Debugging your scripts
 
 * As the script grows and decision paths are included with conditional statements, we start using looping structures, etc 
