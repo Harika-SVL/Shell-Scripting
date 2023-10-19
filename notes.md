@@ -24,7 +24,7 @@
 
 echo "Hello World!"
 ```
-* Now execute the script using `bash` _**bash helloworld.sh**_
+* Now execute the script using _bash_ _**bash helloworld.sh**_
 ```
 mkdir scripts
 cd scripts
@@ -51,7 +51,7 @@ print("Hello World!")
 ```
 ![Alt text](shots/3.PNG)
 
-* Now execute the script using `python3` _**python3 helloworld.py**_
+* Now execute the script using _python3_ _**python3 helloworld.py**_
 ```
 mkdir scripts
 cd scripts
@@ -61,7 +61,7 @@ python3 helloworld.py
 ![Alt text](shots/4.PNG)
 
 * To execute we used bash command, but even after having shebang why do we need bash command :
-* To execute the scripts we need file permissions,so let's give file permissions
+* To execute the scripts we need file permissions, so let's give file permissions
 ```
 ls -l helloworld.sh
 chmod +x helloworld.sh
@@ -80,15 +80,15 @@ ls -l helloworld.py
 
 ## Readability
 
-* When writing,aim to make sure the code is as readable as possible
-* The scripts are made so :
+* When writing, make sure the code is readable 
+* The scripts are made with :
     * Comments
     * Verbosity
 
 ### Comments
 
 * Comments is nothing more than bit of text explaining what you are doing
-* In shell the character which we use to denote comments is _**#**_
+* In shell the character which we use to denote comments is _#_
 ```
 #!/bin/bash
 
@@ -116,7 +116,7 @@ echo "Hello World!"  # Print the text to the terminal
 # Author: Harika
 # Version: v1.0.0
 # Date: Present
-# Description: This is sample shell script
+# Description: Sample shell script
 # Usage: ./helloworld.sh
 #####################################################################
 
@@ -129,8 +129,8 @@ echo "Hello World!"
 
 * Balancing act between not too much but also too less explanation
 * Types :
-    * Verbosity in Comments : ensure your comments are punctual and smaller
-    * Verbosity in Commands : ensure to use long variants in commands instead of single letter , e.g. ls --recursive instead of ls -R, where they both give same results and long variant is readable
+    * Verbosity in Comments : Ensure your comments are punctual and smaller
+    * Verbosity in Commands : Ensure to use long variants in commands instead of single letter , e.g. ls --recursive instead of ls -R, where they both give same results and long variant is readable
 
     ![Alt text](shots/8.PNG)
     
@@ -142,7 +142,7 @@ echo "Hello World!"
 
 #### What is a variable ?
 
-* Variable is a standard building block in scripting languages, They allow you to store information, so that we can retrieve/change multiple times during the execution of script.
+* Variable is a standard building block in scripting languages. They allow you to store information, so that we can retrieve/change multiple times during the execution of script.
 * Assigning the value variable `<variable_name>=<variable_value>`
 ```
 name="Quality Thoughts"
@@ -162,15 +162,15 @@ echo "Name == ${name}"
 #####################################################################
 # Author: Harika
 # Version: v1.0.0
-# Date: Present date
-# Description: This is shell script demonstrating variables
+# Date: Present 
+# Description: Shell script demonstrating variables
 # Usage: ./variabledemo.sh
 #####################################################################
 
 name="Harika"
 org_name="Quality Thoughts"
 
-# Here we are interpolating the variables
+# Interpolating the variables
 echo "This is ${name} from ${org_name}"
 
 # All the variables are treated as text by linux until and unless you are explicit
@@ -193,43 +193,44 @@ $(( ${number} + 1 ))
 #####################################################################
 # Author: Harika
 # Version: v1.0.0
-# Date: Present date
-# Description: This is shell script demonstrating variables
+# Date: Present 
+# Description: Shell script demonstrating variables
 # Usage: ./variabledemo.sh
 #####################################################################
 
 name="Harika"
 org_name="Quality Thoughts"
 
-# Here we are interpolating the variables
+# Interpolating the variables
 echo "This is ${name} from ${org_name}"
 
 # All the variables are treated as text by linux until and unless you are explicit
 number=5
 echo $number + 1
 
-echo "lets use arthimetic expression"
+echo "let's use arthimetic expression"
 echo $(( ${number} + 1 ))
 ```
 ![Alt text](shots/12.PNG)
 ![Alt text](shots/13.PNG)
 
-* In shell scripting we following naming conventions, for
-    * variables: lowercase with underscores
+* In shell scripting we follow naming conventions, for
+
+1. Variables : lowercase with underscores
 ```
 my_number=6
 message="how are you ?"
 ```
-* Constants: UPPERCASE
+2. Constants : UPPERCASE
 ```
 LOCATION="/home"
 ```
-* Do not create variables with names which already have some meaning PATH, USER, LANG, SHELL, HOME & so on. If the Purpose is similar try to prefix SCRIPT_, for example define as shown below.
+* Do not create variables with names which already have some meaning PATH, USER, LANG, SHELL, HOME & so on. If the purpose is similar, try to prefix 'SCRIPT_', for example define as shown below
 ```
 SCRIPT_PATH over PATH
 SCRIPT_USER over USER
 ```
-* So far, we have been dealing with static scripts, so let’s introduce the concept of _user inputs_ in shell scripting
+* So far, we have been dealing with static scripts, so let’s introduce the concept of _User inputs_ in shell scripting
 
 ### Basic Inputs
 
@@ -237,15 +238,15 @@ SCRIPT_USER over USER
 ```
 ./<script>.sh Hello
 ```
-* Let's create a script called as `printname.sh` with the following script
+* Let's create a script called as _**printname.sh**_ with the following script
 ```
 #!/bin/bash
 
 #####################################################################
 # Author: Harika
 # Version: v1.0.0
-# Date: Present date
-# Description: This script demonstrates basic user inputs
+# Date: Present 
+# Description: Script demonstrates basic user inputs
 # Usage: ./printname.sh <pass name>
 #####################################################################
 name=${1}
@@ -261,17 +262,19 @@ echo "0 = ${0}  1 = ${1}"
 * Here ${1} stands for the _first positional argument_
 * Generally we will have two kinds of arguments :
 
-   1. Positional arguments
+1. Positional arguments :
 ```
 cp 1.txt 2.txt 
-# 1.txt & 2.txt are two positional arguments
+
+# 1.txt & 2.txt - positional arguments
 ```
-   2. Named arguments
+2. Named arguments :
 
 ```
 ping --count 4 google.com
-# google.com is a positional argument
-# where as 4 is a named argument as it is a value for the name called as count
+
+# google.com - positional argument
+# 4 - named argument as it is a value for the name called as count
 ```
 * The script shown above is depending on positional arguments
 
@@ -287,14 +290,14 @@ $0 = ./myscript.sh
 $1 = 12
 $2 = 13
 ```
-* Lets develop a shell script which takes name and location as positional argument 1 and 2 and prints the 
+* Let's develop a shell script which takes name and location as positional argument 1 and 2 and prints the 
 ```
 #!/bin/bash
 
 #####################################################################
-# Author: Shaik Khaja Ibrahim
+# Author: Harika
 # Version: v1.0.0
-# Date: 26-Aug-2020
+# Date: Present
 # Description: This script demonstrates positional arguments
 # Usage: ./positionalargdemo.sh <name> <location>
 # 1 positional argument is considered as name
@@ -310,7 +313,7 @@ echo "Welcome ${name}, You come from ${location}. Welcome to Bash Scripting"
 
 ### Parameters & arguments
 
-* Lets understand the terminology of parameter & arguments. They are slightly different
+* Let's understand the terminology of parameter & arguments. They are slightly different
 * Argument is something which you pass to a script.
 * What you define in a script to hold argument value is parameter
 * Lets write a simple script to demonstrate the difference
