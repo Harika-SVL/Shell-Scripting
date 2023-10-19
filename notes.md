@@ -343,6 +343,36 @@ echo "Parameter 2 is ${parameter_2}"
 ```
 ![Alt text](shots/19.PNG)
 ![Alt text](shots/20.PNG)
+```
+ $1-$9    Represent positional parameters for arguments one to nine
+${10}-${n}    Represent positional parameters for arguments after nine
+$0    Represent name of the script
+$∗    Represent all the arguments as a single string
+$@    Same as $∗, but differ when enclosed in (")
+$#    Represent total number of arguments
+$$    PID of the script
+$?    Represent last return code
+```
+#### SHELL:
+
+* A shell gives us an interface to the Unix system. While using an operating system, we indirectly interact with the shell. 
+* On Linux distribution systems, each time we use a terminal, we interact with the shell. The job of the shell is to interpret or analyze the Unix commands given by users. 
+* A shell accepts commands from the user and transforms them into a form that is understandable to the kernel. In other words, it acts as a mediator between the user and the kernel unit of the operating system.
+
+#### NON-INTERACTIVE SHELL:
+
+* As the name implies, a non-interactive shell is a type of shell that doesn’t interact with the user. We can run it through a script or similar. 
+* Also, it can be run through some automated process. In this case  .bashrc and .profile files do not get executed. The 
+non-interactive shell influences the PATH variable. 
+* It is highly recommended to use the full path for a command in non-interactive shells. Non-interactive scripts can smoothly run in the background easily. 
+* This shell is generally a non-login shell because the calling user has logged in already. A shell that runs a script is always considered a non-interactive shell.
+
+#### INTERACTIVE SHELL:
+
+* An interactive shell is defined as the shell that simply takes commands as input on tty from the user and acknowledges the output to the user. 
+* This shell also reads startup files that occurred during activation and displays a prompt. It also enables job control by default. It is also clear from the name, it is a shell with which we can interact. 
+* An interactive script is a script that requires input from the user. Interactive scripts couldn’t run in the background as they required input from the user.
+
 
 * The scripts which we have developed so far are non-interactive scripts, because once you pass the values the execution happens
 * Interactive scripts take inputs from users while executing
