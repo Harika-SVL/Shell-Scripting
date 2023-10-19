@@ -290,7 +290,7 @@ $0 = ./myscript.sh
 $1 = 12
 $2 = 13
 ```
-* Let's develop a shell script which takes name and location as positional argument 1 and 2 and prints the 
+* Let's develop a shell script which takes name and location as positional argument 1 and 2 and prints the _**positionalargdemo.sh**_
 ```
 #!/bin/bash
 
@@ -311,12 +311,16 @@ echo "Welcome ${name}, You come from ${location}. Welcome to Bash Scripting"
 ```
 * Execution Result
 
+![Alt text](shots/16.PNG)
+![Alt text](shots/17.PNG)
+![Alt text](shots/18.PNG)
+
 ### Parameters & arguments
 
 * Let's understand the terminology of parameter & arguments. They are slightly different
 * Argument is something which you pass to a script.
 * What you define in a script to hold argument value is parameter
-* Let's write a simple script to demonstrate the difference
+* Let's write a simple script to demonstrate the difference_**argumentparameter.sh**_
 ```
 #!/bin/bash
 
@@ -337,11 +341,31 @@ echo "Parameter 1 is ${parameter_1}"
 
 echo "Parameter 2 is ${parameter_2}"
 ```
+![Alt text](shots/19.PNG)
+![Alt text](shots/20.PNG)
+
 * The scripts which we have developed so far are non-interactive scripts, because once you pass the values the execution happens
 * Interactive scripts take inputs from users while executing
 * Now let's look at a simple read command which reads the input from the user and stores in a variable called as _REPLY_
+```
+read 
+hello
+echo $REPLY
+```
+![Alt text](shots/21.PNG)
+
 * Now let's execute one more simple variation of the read command
-* Let's build some interactive script asking questions to the user
+```
+read -p "What is your name ?"
+Harika
+echo $REPLY
+read -p "What is your name ?" my_name
+Harika
+echo $my_name
+```
+![Alt text](shots/22.PNG)
+
+* Let's build some interactive script asking questions to the user_**interactivescriptdemo.sh**_
 ```
 #!/bin/bash
 
@@ -359,7 +383,12 @@ read -p "What is your name ? " name
 echo "Hi ${name}, Thanks for watching the movie ${movie_super_hero} and liking the character ${super_hero}"
 ```
 * Now let's execute the script
+
+![Alt text](shots/23.PNG)
+![Alt text](shots/24.PNG)
+
 * Let's try to come up with script design which acts as a calculator by taking two values and operation as input
     * Script will be _**calculator.sh**_
     * Operations that will be supported are add,sub,mul,div
     * It should take two numbers to perform math
+
