@@ -392,3 +392,83 @@ echo "Hi ${name}, Thanks for watching the movie ${movie_super_hero} and liking t
     * Operations that will be supported are add,sub,mul,div
     * It should take two numbers to perform math
 
+### Variable Scopes in Shell scripts
+
+* Let's create two shell scripts
+
+1. _**script1.sh**_
+```
+#!/bin/bash
+
+name="Quality Thoughts"
+echo "This is from script 1 name= ${name}"
+./script2.sh
+```
+2. _**script2.sh**_
+```
+#!/bin/bash
+
+echo "This is script2"
+echo "Value of name is ${name}"
+```
+* From script1 let's call script2 and try to see if the variable defined in script1 is available for use in script2
+* let's execute _**script1.sh**_
+* The value of name is not available in script2. The default scope of variable is the same script file.
+* So let's find out if there is any other way to pass the variable from script1 to external scripts
+
+1. Add arguments to script2
+```
+./script2.sh 
+# replace this with
+./script2.sh $name
+```
+2. Export the variable using _**export**_ statement in script1. so let's change script1.sh
+```
+#!/bin/bash
+
+name="Quality Thoughts"
+echo "This is from script 1 name= ${name}"
+export name
+./script2.sh
+```
+### Debugging your scripts
+
+* As the script grows and decision paths are included with conditional statements, we start using looping structures, etc 
+* We may need some level of debugging to analyse the scripts
+* This can be done as bash provides two options for us :
+    * -v option
+    * -x option
+* Create a bash script _**debugdemo.sh**_ with the following content :
+```
+#!/bin/bash
+
+echo "the zeroth argument is $(basename $0)"
+echo "Hello $*"
+```
+* Now execute this script with the following command :
+```
+bash -v ./debugdemo.sh Harika SVL
+```
+* -v option displays the verbose output from bash
+* -x option displays the commands, as they are executed and is most commonly used
+* Now let's run the script
+```
+bash -x ./debugdemo.sh Harika SVL
+```
+* This shows how it is evaluated and helpful to know the decision branch that has been chosen by the script
+* Install bash debug plugin in Visual Studio Code and we can debug the shell script
+* Now we can debug the shell script
+* This approach works with Visual Studio Code installed on the linux desktops or MAC.
+
+### Enhancing interactive scripts
+
+* Let's understand how to limit number of characters 
+* so limit for number of characters to be entered, let's run the same command with one more option 
+* Let's understand how to control visibility of entered text. If we request for sensitive content like pin/password etc, its not a good approach to show the text while user is typing, Shell gives an option of hiding text when the user is typing. This can be achieved by adding a _**-s**_ option to read command
+
+### Next Steps:
+
+* How to make my shell scripts understand options ? (Named Parameters)
+```
+./downloadfile.sh --url <>  --location-to-save /home/ubuntu/test.txt
+```
