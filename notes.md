@@ -480,21 +480,30 @@ export name
 ```
 #!/bin/bash
 
-echo "the zeroth argument is $(basename $0)"
+echo "The zeroth argument is $(basename $0)"
 echo "Hello $*"
 ```
 * Now execute this script with the following command :
 ```
-bash -v ./debugdemo.sh Harika SVL
+bash -v ./debugdemo.sh Harika 
 ```
 * -v option displays the verbose output from bash
+
+
+
+* Now let's run the script with followig command :
+```
+bash -x ./debugdemo.sh Harika 
+```
 * -x option displays the commands, as they are executed and is most commonly used
-* Now let's run the script
-```
-bash -x ./debugdemo.sh Harika SVL
-```
+
+
+
 * This shows how it is evaluated and helpful to know the decision branch that has been chosen by the script
 * Install bash debug plugin in Visual Studio Code and we can debug the shell script
+
+
+
 * Now we can debug the shell script
 * This approach works with Visual Studio Code installed on the linux desktops or MAC.
 
