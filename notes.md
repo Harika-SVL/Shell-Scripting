@@ -444,7 +444,7 @@ echo "Value of name is ${name}"
 * From script1 let's call script2 and try to see if the variable defined in script1 is available for use in script2
 * let's execute _**script1.sh**_
 
-
+![Alt text](shots/25.PNG)
 
 * The value of name is not available in script2. The default scope of variable is the same script file.
 * So let's find out if there is any other way to pass the variable from script1 to external scripts
@@ -466,8 +466,7 @@ export name
 ```
 * Now execute _**script1.sh**_
 
-
-
+![Alt text](shots/26.PNG)
 
 ### Debugging your scripts
 
@@ -483,35 +482,44 @@ export name
 echo "The zeroth argument is $(basename $0)"
 echo "Hello $*"
 ```
+* -v option displays the verbose output from bash
 * Now execute this script with the following command :
 ```
 bash -v ./debugdemo.sh Harika 
 ```
-* -v option displays the verbose output from bash
+![Alt text](shots/27.PNG)
 
-
-
+* -x option displays the commands, as they are executed and is most commonly used
 * Now let's run the script with followig command :
 ```
 bash -x ./debugdemo.sh Harika 
 ```
-* -x option displays the commands, as they are executed and is most commonly used
-
-
+![Alt text](shots/28.PNG)
 
 * This shows how it is evaluated and helpful to know the decision branch that has been chosen by the script
-* Install bash debug plugin in Visual Studio Code and we can debug the shell script
+* Install _**bash debug**_ plugin in Visual Studio Code and we can debug the shell script
 
-
+![Alt text](shots/29.PNG)
 
 * Now we can debug the shell script
+
+=> Run => Start Debugging => Run Debug
+
 * This approach works with Visual Studio Code installed on the linux desktops or MAC.
 
 ### Enhancing interactive scripts
 
 * Let's understand how to limit number of characters 
+
+![Alt text](shots/30.PNG)
+
 * so limit for number of characters to be entered, let's run the same command with one more option 
+
+![Alt text](shots/31.PNG)
+
 * Let's understand how to control visibility of entered text. If we request for sensitive content like pin/password etc, its not a good approach to show the text while user is typing, Shell gives an option of hiding text when the user is typing. This can be achieved by adding a _**-s**_ option to read command
+
+![Alt text](shots/32.PNG)
 
 ### Next Steps:
 
@@ -519,3 +527,12 @@ bash -x ./debugdemo.sh Harika
 ```
 ./downloadfile.sh --url <>  --location-to-save /home/ubuntu/test.txt
 ```
+### Error Checking and Handling
+
+* The following topics
+    * Error checking
+    * Error handling
+    * Error Prevention
+* The exit status (exit codes or return codes) is the way Bash communicates the successful or unsuccessful termination of a process to its parent.
+* Linux command execution process
+
