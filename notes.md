@@ -647,7 +647,7 @@ touch temps/tempfile.txt
 ```
 * Let's execute this script with a positive & negative condition
 
-
+![Alt text](shots/39.PNG)
 
 * So now let's adopt `if-then-else`
 ```
@@ -697,10 +697,10 @@ fi
 #!/bin/bash
 
 ####################################################################
-# Author: Shaik Khaja Ibrahim
+# Author: harika
 # Version: v1.0.0
-# Date: 01-Sep-2020
-# Description: This script demonstrates basic user inputs
+# Date: Present
+# Description: Demonstrates basic user inputs
 # Usage: ./createfile.sh <directory-name> <file-name> <file-content>
 #####################################################################
 
@@ -738,7 +738,7 @@ echo ${file_content} > ${abs_file_path}
 ```
 * Now execute the script
 
-
+![Alt text](shots/40.PNG)
 
 * In `Command Line usage` when arguments are in `<>` they are _**Required arguments**_ and if the arguments are in `[]` they are _**optional**_
 
