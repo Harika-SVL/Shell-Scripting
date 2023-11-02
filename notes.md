@@ -442,7 +442,7 @@ echo "This is script-2"
 echo "Value of name is ${name}"
 ```
 * From script1 let's call script2 and try to see if the variable defined in script1 is available for use in script2
-* let's execute _**script1.sh**_
+* let's execute _**script1.sh**_ (cmd ./script1.sh)
 
 ![Alt text](shots/25.PNG)
 
@@ -536,3 +536,83 @@ bash -x ./debugdemo.sh Harika
 * The exit status (exit codes or return codes) is the way Bash communicates the successful or unsuccessful termination of a process to its parent.
 * Linux command execution process
 
+![Alt text](shots/33.PNG)
+* Let's use mktemp command
+```
+mktemp --help
+```
+* Let's write a script with exit codes for success & failure
+```
+#!/bin/bash
+
+# Run a command with will always work
+mktemp
+# storing the exit code of mktemp
+mktemp_ec=$?
+
+# Run a command which always fails
+mkdir /home/ubuntu
+mkdir_ec=$?
+
+echo "mktemp returned success exit code which ${mktemp_ec}"
+
+echo "mkdir returned failure exit code which ${mkdir_ec}"
+```
+* Now execute this script 
+
+
+
+* Return code of 0 is success any other return code is failure
+* For the standard exit codes and their meanings 
+[Refer here : https://tldp.org/LDP/abs/html/exitcodes.html ]
+
+### Test Shorthand
+
+* We use test command in lot of scripts. Lets explore test
+* Directory checking
+```
+# full command
+test -d <dirpath>
+
+# short hand
+[ -d <dirpath> ]
+```
+
+
+* Using test we can do comparisons using -gt, -ne, -eq, -lt
+
+
+
+* To check the file existence use test -f
+
+
+
+* So far we looked at how to check for directories, files and conditions which can act as error checks. if we combine this checks with conditional statements we can avoid errors.
+* For handling errors also we need a conditional statements
+
+### if-then-exit
+
+* The basic idea is to test for a condition (IF), and if that condition is true, we do something (THEN) and if condition is false we return failure exit codes (exit)
+* We want to write a script which prints content of file
+* let's write a basic if condition
+```
+if <condition> then
+   statements
+fi
+```
+* Using this lets write the script as shown below
+```
+#!/bin/bash
+
+FILE=/tmp/random.txt
+
+# Check if the file exits
+
+if [[ -f ${FILE} ]]; then
+   cat ${FILE}
+   exit 0
+fi
+
+exit 1
+```
+* Now execute the script for negative test (/tmp/random.txt doesnot exist)
