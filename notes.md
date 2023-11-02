@@ -756,6 +756,10 @@ if [[ ${reply,,} = 'y' ]] || [[ ${reply^^} == 'YES' ]]
     exit 0
 fi
 ```
+* ,, - for lower case
+
+* ^^ - for upper case
+
 ### Special Parameters
 
 * $0 $1 …
