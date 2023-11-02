@@ -318,9 +318,9 @@ echo "Welcome ${name}, You come from ${location}. Welcome to Bash Scripting"
 ### Parameters & arguments
 
 * Let's understand the terminology of parameter & arguments. They are slightly different
-* Argument is something which you pass to a script.
-* What you define in a script to hold argument value is parameter
-* Let's write a simple script to demonstrate the difference _**argumentparameter.sh**_
+* _**Argument**_ is something which you pass to a script.
+* What you define in a script to hold argument value is _**Parameter**_
+* Let's write a simple script to demonstrate the difference : _**argumentparameter.sh**_
 ```
 #!/bin/bash
 
@@ -344,20 +344,20 @@ echo "Parameter 2 is ${parameter_2}"
 ![Alt text](shots/19.PNG)
 ![Alt text](shots/20.PNG)
 ```
- $1-$9    Represent positional parameters for arguments one to nine
+ $1-$9        Represent positional parameters for arguments one to nine
 ${10}-${n}    Represent positional parameters for arguments after nine
-$0    Represent name of the script
-$∗    Represent all the arguments as a single string
-$@    Same as $∗, but differ when enclosed in (")
-$#    Represent total number of arguments
-$$    PID of the script
-$?    Represent last return code
+$0            Represent name of the script
+$∗            Represent all the arguments as a single string
+$@            Same as $∗, but differ when enclosed in (")
+$#            Represent total number of arguments
+$$            PID of the script
+$?            Represent last return code
 ```
 #### SHELL:
 
-* A shell gives us an interface to the Unix system. While using an operating system, we indirectly interact with the shell. 
-* On Linux distribution systems, each time we use a terminal, we interact with the shell. The job of the shell is to interpret or analyze the Unix commands given by users. 
-* A shell accepts commands from the user and transforms them into a form that is understandable to the kernel. In other words, it acts as a mediator between the user and the kernel unit of the operating system.
+* A shell gives us an interface to the Unix system. While using an operating system, we indirectly interact with the shell
+* On Linux distribution systems, each time we use a terminal, we interact with the shell. The job of the shell is to interpret or analyze the Unix commands given by users 
+* A shell accepts commands from the user and transforms them into a form that is understandable to the kernel. In other words, it acts as a mediator between the user and the kernel unit of the operating system
 
 #### NON-INTERACTIVE SHELL:
 
@@ -517,7 +517,8 @@ bash -x ./debugdemo.sh Harika
 
 ![Alt text](shots/31.PNG)
 
-* Let's understand how to control visibility of entered text. If we request for sensitive content like pin/password etc, its not a good approach to show the text while user is typing, Shell gives an option of hiding text when the user is typing. This can be achieved by adding a _**-s**_ option to read command
+* Let's understand how to control visibility of entered text. If we request for sensitive content like pin/password etc, its not a good approach to show the text while user is typing
+* So the shell gives an option of hiding text when the user is typing. This can be achieved by adding a _**-s**_ option to read command
 
 ![Alt text](shots/32.PNG)
 
@@ -529,19 +530,19 @@ bash -x ./debugdemo.sh Harika
 ```
 ### Error Checking and Handling
 
-* The following topics
+* Topics :
     * Error checking
     * Error handling
     * Error Prevention
-* The exit status (exit codes or return codes) is the way Bash communicates the successful or unsuccessful termination of a process to its parent.
-* Linux command execution process
+* The _**Exit status**_ (exit codes or return codes) is the way Bash communicates the successful or unsuccessful termination of a process to it's parent
+* Linux command execution process :
 
 ![Alt text](shots/33.PNG)
-* Let's use mktemp command
+* Let's use _**mktemp**_ command
 ```
 mktemp --help
 ```
-* Let's write a script with exit codes for success & failure
+* Let's write a script with `exit codes` for success & failure
 ```
 #!/bin/bash
 
@@ -562,13 +563,13 @@ echo "mkdir returned failure exit code which ${mkdir_ec}"
 
 ![Alt text](shots/34.PNG)
 
-* Return code of 0 is success any other return code is failure
+* Return code of `0` is _**success**_ any `other return code` is _**failure**_
 * For the standard exit codes and their meanings 
 [Refer here : https://tldp.org/LDP/abs/html/exitcodes.html ]
 
 ### Test Shorthand
 
-* We use test command in lot of scripts. Lets explore test
+* We use test command in lot of scripts, let's explore `test`command
 * Directory checking
 ```
 # full command
@@ -579,28 +580,28 @@ test -d <dirpath>
 ```
 ![Alt text](shots/35.PNG)
 
-* Using test we can do comparisons using -gt(greater than), -ne(not equls), -eq(equals), -lt(less than)
+* Using test we can do comparisons using _**-gt**_ (greater than), _**-ne**_ (not equls), _**-eq**_ (equals), _**-lt**_ (less than)
 
 ![Alt text](shots/36.PNG)
 
-* To check the file existence use test -f(File existence)
+* To check the file existence use test _**-f**_ (file existence)
 
 ![Alt text](shots/37.PNG)
 
-* So far we looked at how to check for directories, files and conditions which can act as error checks. if we combine this checks with conditional statements we can avoid errors.
-* For handling errors also we need a conditional statements
+* So far we looked at how to check for directories, files and conditions which can act as error checks. If we combine this checks with conditional statements we can avoid errors.
+* For handling errors also we need a _**Conditional Statements**_
 
-### if-then-exit
+### If-then-exit
 
-* The basic idea is to test for a condition (IF), and if that condition is true, we do something (THEN) and if condition is false we return failure exit codes (exit)
+* The basic idea is to test for a condition (`IF`), and if that condition is `true`, we do something (`THEN`) and if condition is `false` we return failure exit codes (`Exit`)
 * We want to write a script which prints content of file
-* let's write a basic if condition
+* let's write a basic _**if condition**_
 ```
 if <condition> then
    statements
 fi
 ```
-* Using this lets write the script as shown below _**if-then-exitdemo.sh**_ 
+* Using this let's write the script as shown below _**if-then-exitdemo.sh**_ 
 ```
 #!/bin/bash
 
@@ -644,11 +645,11 @@ fi
 
 touch temps/tempfile.txt
 ```
-* Lets execute this script with a positive & negative condition
+* Let's execute this script with a positive & negative condition
 
 
 
-* So now lets adopt if-then-else
+* So now let's adopt `if-then-else`
 ```
 #!/bin/bash
 FILE=randomfile.txt
@@ -662,7 +663,7 @@ else
     cat ${FILE}
 fi
 ```
-* Lets write one more if-then-else script which accepts parameters (positional parameters)
+* Let's write one more `if-then-else` script which accepts parameters (positional parameters)
 ```
 #!/bin/bash
 
@@ -686,12 +687,12 @@ fi
 ```
 ### Checking my arguments
 
-* Lets try to write a very simple shell scrip which creates a specified file in the specified directory with specified content
-* So argument list should be
+* Let's try to write a very simple shell scrip which creates a specified file in the specified directory with specified content
+* So argument list should be :
 ```
 ./createfile.sh <directory_path> <filename> <file contents>
 ```
-* The script will be as shown below
+* The script will be as shown below :
 ```
 #!/bin/bash
 
@@ -739,12 +740,12 @@ echo ${file_content} > ${abs_file_path}
 
 
 
-* In command line usage when arguments are in <> they are required arguments and if the arguments are in [] they are optional.
+* In `Command Line usage` when arguments are in `<>` they are _**Required arguments**_ and if the arguments are in `[]` they are _**optional**_
 
 ### Dealing with y/n options in interactive scripts
 
 * When we ask input from the user, user might enter many possibilities for yes (YES,yes,YeS,y,Y) and same for no.
-* How can write a script which is case sensitive to yes value
+* How can we write a script which is case sensitive to yes value ?
 ```
 #!/bin/bash
 
