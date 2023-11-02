@@ -560,7 +560,7 @@ echo "mkdir returned failure exit code which ${mkdir_ec}"
 ```
 * Now execute this script 
 
-
+![Alt text](shots/34.PNG)
 
 * Return code of 0 is success any other return code is failure
 * For the standard exit codes and their meanings 
@@ -577,15 +577,15 @@ test -d <dirpath>
 # short hand
 [ -d <dirpath> ]
 ```
+![Alt text](shots/35.PNG)
 
+* Using test we can do comparisons using -gt(greater than), -ne(not equls), -eq(equals), -lt(less than)
 
-* Using test we can do comparisons using -gt, -ne, -eq, -lt
+![Alt text](shots/36.PNG)
 
+* To check the file existence use test -f(File existence)
 
-
-* To check the file existence use test -f
-
-
+![Alt text](shots/37.PNG)
 
 * So far we looked at how to check for directories, files and conditions which can act as error checks. if we combine this checks with conditional statements we can avoid errors.
 * For handling errors also we need a conditional statements
@@ -600,7 +600,7 @@ if <condition> then
    statements
 fi
 ```
-* Using this lets write the script as shown below
+* Using this lets write the script as shown below _**if-then-exitdemo.sh**_ 
 ```
 #!/bin/bash
 
@@ -616,3 +616,142 @@ fi
 exit 1
 ```
 * Now execute the script for negative test (/tmp/random.txt doesnot exist)
+
+![Alt text](shots/38.PNG)
+
+### Some examples of popular conditions
+
+1. if [[ -f /tmp/file ]]; then do-something => do something if the file /tmp/file exists
+2. if [[ ! -f /tmp/file ]]; then do-something => do something if the file /tmp/file does not exists
+3. if [[ -n ${variable} ]]; then do-something => do something if the ${variable} is not empty
+4. if [[ !-n ${variable} ]]; then do-something => do something if the ${variable} is empty
+5. if [[ -z ${variable} ]]; then do-something => do something if the ${variable} is empty
+
+### Applying above conditions to make script handle errors
+
+* The _**if-then-rcdemo.sh**_ file will have a script
+```
+#!/bin/bash
+mkdir temps
+mkdir_rc=$?
+
+# Test if the directory creation is success
+
+if [[ ${mkdir_rc} -ne 0 ]]; then
+    echo "mkdir didnot created the directory, so stopping script execution"
+    exit 1
+fi
+
+touch temps/tempfile.txt
+```
+* Lets execute this script with a positive & negative condition
+
+
+
+* So now lets adopt if-then-else
+```
+#!/bin/bash
+FILE=randomfile.txt
+
+# check if the file exists
+if [[ ! -f ${FILE} ]]; then
+    echo "File mentioned as ${FILE} doesn't exist so exiting"
+    exit 1
+else
+    echo "Printing contents of file at ${FILE}"
+    cat ${FILE}
+fi
+```
+* Lets write one more if-then-else script which accepts parameters (positional parameters)
+```
+#!/bin/bash
+
+### Usage ./ifthenelsedemo2.sh <path-of-file>
+
+file_name=$1
+
+# user might enter empty values
+if [[ -z ${file_name} ]]; then
+    echo "Incorrect usage: ./ifthenelsedemo2.sh <filename>"
+    exit 1
+fi
+
+if [[ ! -f ${file_name} ]]; then
+    echo "Please correct the file path and re-execute."
+    exit 1
+else
+    echo "Contents of the file are"
+    cat ${file_name}
+fi
+```
+### Checking my arguments
+
+* Lets try to write a very simple shell scrip which creates a specified file in the specified directory with specified content
+* So argument list should be
+```
+./createfile.sh <directory_path> <filename> <file contents>
+```
+* The script will be as shown below
+```
+#!/bin/bash
+
+####################################################################
+# Author: Shaik Khaja Ibrahim
+# Version: v1.0.0
+# Date: 01-Sep-2020
+# Description: This script demonstrates basic user inputs
+# Usage: ./createfile.sh <directory-name> <file-name> <file-content>
+#####################################################################
+
+# We need three arguments, so checking if the arguments passed count
+# is 3 or not
+
+if [[ $# -ne 3 ]]; then
+    echo "Incorrect number of arguments passed"
+    echo "Usage: ./createfile.sh <directory-name> <file-name> <file-content>"
+    exit 1
+fi
+
+# create parameters with argument values
+directory_name=$1
+file_name=$2
+file_content=$3
+
+# check if the directory exists, if it doesnot exist create directory
+
+if [[ ! -d ${directory_name} ]]; then
+    mkdir ${directory_name} || { echo "Cannot create directory"; exit 1; }
+fi
+
+# lets create absolute file path
+abs_file_path=${directory_name}/${file_name}
+
+# Try to create a file if the file doesnot exist
+if [[ ! -f ${abs_file_path} ]]; then
+    touch ${abs_file_path} || { echo "Cannot create a file"; exit 1; }
+fi
+
+# Since file is created or present add the contents to it
+echo ${file_content} > ${abs_file_path}
+
+```
+* Now execute the script
+
+
+
+* In command line usage when arguments are in <> they are required arguments and if the arguments are in [] they are optional.
+
+### Dealing with y/n options in interactive scripts
+
+* When we ask input from the user, user might enter many possibilities for yes (YES,yes,YeS,y,Y) and same for no.
+* How can write a script which is case sensitive to yes value
+```
+#!/bin/bash
+
+read -p "Do you like linux? " reply
+
+if [[ ${reply,,} = 'y' ]] || [[ ${reply^^} == 'YES' ]]
+    echo "Great, Continue your learning journey"
+    exit 0
+fi
+```
