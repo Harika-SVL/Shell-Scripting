@@ -1266,7 +1266,7 @@ echo $reply
 ```
 * Try to fix the issue in above script to get the reply from function
 
-* Using _**GLOBAL VARIABLES**_
+* Using _**Global Variables**_
 
 #### Example : 1
 ```
@@ -1287,7 +1287,7 @@ echo $1
 greeting=$(hello "mybro")
 echo $greeting
 ```
-* Using _**LOCAL VARIABLE**_
+* Using _**Local Variable**_
 
 #### Example :
 ```
@@ -1305,7 +1305,7 @@ output:
 Inside first function x=HelloNew
 Outside first function x =
 ```
-* Using _**GLOBAL VARIABLE**_
+* Using _**Global Variable**_
 
 #### Example :
 ```
@@ -1323,7 +1323,7 @@ output:
 Inside first function x=Hello Geek
 Outside first function x = Hello Geek
 ```
-* Using _**LOCAL & GLOBAL VARIABLE**_
+* Using _**Local & Global Variable**_
 
 #### Example :
 ```
@@ -1370,7 +1370,7 @@ echo "$return_test"
 ```
 ### Recursive Functions
 
-* Function that calls itself is recursive functions
+* Function that `calls itself` is recursive functions
 ```
 #!/bin/bash
 
@@ -1390,13 +1390,13 @@ read -p "Enter a number: " val
 factorial=$(calculate_factorial $val)
 echo "Factorial of $val is: $factorial"
 ```
-* Exercise:
+* Exercise :
 
 1. Write a function to download a file from internet to desired location
 ```
 download_item "<url>" "<location>"
 ```
-2. Write a function to extract a tar to a specific location
+2. Write a function to extract a tar file to a specific location
 ```
 untar_file <tar_location> <extract_location>
 ```
