@@ -1001,4 +1001,85 @@ until (( COUNT < 0 )); do
     (( COUNT-- ))
 done
 ```
+### Reading input from files
+
+* Let's assume we have list of server ip addresses or hosts in the file called as _**servers.txt**_
+* We are asked to find which servers are up
+* This script is working, but it is unable to redirect the output to a text
+```
+#!/bin/bash
+
+# Usage: ./checkservers <servers-filepath>
+# servers-filepath is a text file with each server in new line
+
+if [ ! -f "$1" ] ;
+then
+    echo "The input to $0 should be a file"
+fi
+echo "The following servers are up on $(date +%x)" > checkservers.out
+while read server; 
+do
+    ping -c1 "$server"&& echo "Serverup $server" >> checkservers.out
+done < $1
+
+cat checkservers.out
+```
+### Building Blocks for reusability : Functions
+
+* DRY principle(Don’t Repeat Yourself)
+* We will cover the following aspects :
+    * Introduction
+    * Passing Parameters to the functions
+    * Variable scope
+    * Returning values from functions
+    * Recursive functions
+* Functions are internally represented as blocks of code in memory as named elements. These elements can be created within shell environment, as well as within the script execution.
+* Execute `declare -F` in the bash. The output of this command might vary with distribution
+
+![Alt text](shots/48.PNG)
+![Alt text](shots/49.PNG)
+
+* Functions can be created using the following two syntaxes
+
+* Syntax 1:
+```
+function-name() {
+    <code to be executed>
+}
+```
+* Syntax 2:
+```
+function <function-name> {
+    <code to be executed>
+}
+```
+* Let's start with a simple function
+```
+show_system_details() {
+    echo "Uptime is"
+    uptime
+    echo "Cpu details"
+    lscpu
+    echo "User list"
+    who
+}
+
+is_file() {
+    if [ ! -f "$1" ]; then
+        echo "$1 is not a file"
+        exit 2
+    fi
+}
+
+backup_file() {
+    is_file "$1"
+    new_file_loc="${1}.bak" 
+    cp $1 $new_file_loc
+    echo "file is copied to $new_file_loc"
+}
+
+backup_file "/home/ubuntu/1.txt"
+```
+
+
 
