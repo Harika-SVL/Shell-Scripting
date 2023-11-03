@@ -812,7 +812,7 @@ echo "Hello ${name}, Welcome to world of ${course} "
 ```
 
 
-* There is an alternative syntax to assign default value to parameter
+* There is an alternative syntax to assign default value to parameter (when already the parameters are declared and not assigned values)
 ```
 ${parameter-default}
 ```
