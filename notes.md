@@ -771,13 +771,13 @@ fi
 
 echo "My shell used id $0 and the options passed are $-"
 ```
-* Directly execute the following statement in terminal _**specialparameters.sh**_ :
+![Alt text](shots/41.PNG)
+
+* Directly execute the following statement in terminal 
 ```
 echo "My shell used id $0 and the options passed are $-"
 ```
-* The following results will be shown :
-
-
+![Alt text](shots/42.PNG)
 
 * The options set are as follows :
     * h: short for hash all
@@ -810,7 +810,7 @@ course=$2
 
 echo "Hello ${name}, Welcome to world of ${course} "
 ```
-
+![Alt text](shots/43.PNG)
 
 * There is an alternative syntax to assign default value to parameter (when already the parameters are declared and not assigned values)
 ```
@@ -836,7 +836,7 @@ course=${2-"Linux"}
 echo "Hello ${name}, Welcome to world of ${course} "
 
 ```
-
+![Alt text](shots/44.PNG)
 
 * If the parameter is declared and it has a null value
 ```
@@ -880,16 +880,18 @@ for (( index=0; index<5; index++ )) do
    echo "${courses[$index]}"
 done
 ```
+![Alt text](shots/45.PNG)
+
 ### Internal Field Separator
 
 * By default the IFS value has one of (space, newline or tab)
-* Let's assume you want o iterate over :
+* Let's assume you want o iterate over : _**text.txt**_
 ```
 Hello, 
 This is Linux
 I'm fun to work with
 ```
-* Now if we write the script to iterate and print over this content as shown below :
+* Now if we write the script to iterate and print over this content as shown below : _**ifs.sh**_
 ```
 #!/bin/bash
 file="text.txt"
@@ -899,10 +901,10 @@ do
     echo "$item"
 done
 ```
-
+![Alt text](shots/46.PNG)
 
 * What should be done to this script to iterate over lines? 
-* Now add IFS=$’\n’ to the shell script and this will do the trick
+* Now add IFS=$’\n’ to the shell script and this will do the trick _**ifs.sh**_
 ```
 #!/bin/bash
 file="text.txt"
@@ -912,5 +914,89 @@ do
     echo "$item"
 done
 ```
+![Alt text](shots/47.PNG)
 
+### Iterating through directories and files
+
+* To do this we can write a very simple for loop
+* Exercise: Find mistake in the following shell script
+```
+#!/bin/bash
+echo "Directory path entered by user is /home/ubuntu/contents/*"
+for path in "/home/ubuntu/contents/*";
+do
+    echo "processing ${path} "
+    if [ -d "$path" ];
+    then
+        echo "${path} is directory"
+    elif [ -f "$path" ];
+    then
+        echo "$path is file"
+    fi
+done
+```
+* where as this script is working
+```
+for file in /home/ubuntu/contents/*; do
+        echo $file
+done
+```
+* Try to find a way to reuse last commands output
+
+### Nesting loops
+```
+#!/bin/bash
+for (( row=1; row<=3; row++ ))
+do
+    
+    for (( col=1; col<=3; col++ ))
+    do
+        echo "${row} * ${col}"
+    done
+done
+```
+* Redirecting loop output to a file
+```
+#!/bin/bash
+for (( row=1; row<=3; row++ ))
+do
+    
+    for (( col=1; col<=3; col++ ))
+    do
+        echo "${row} * ${col}"
+    done >> rowscols.txt
+done
+```
+### While and until
+
+* Example of while
+```
+$COUNT=20
+while [ $COUNT -gt 0 ] ; 
+do
+    echo "$COUNT"
+    (( COUNT-- ))
+
+done;
+```
+* Another example for same logic
+```
+#!/bin/bash
+COUNT=20
+while [ "$COUNT" -gt 0 ] ; 
+do
+    echo "$COUNT"
+    (( COUNT-- ))
+
+done;
+```
+* Example Until loop
+```
+#!/bin/bash
+COUNT=10
+until (( COUNT < 0 )); do
+    echo "$COUNT"
+    (( COUNT-- ))
+done
+```
 
