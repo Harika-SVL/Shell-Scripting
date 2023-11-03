@@ -788,6 +788,8 @@ echo "My shell used id $0 and the options passed are $-"
 
 ### Setting default values to parameters
 
+* -z    Checks if the given string operand size is zero; if it is zero length, then it returns true.    [ -z $a ] is not true.
+* -n    Checks if the given string operand size is non-zero; if it is nonzero length, then it returns true.    [ -n $a ] is not false.
 * It's often a good practice to assign default values for non-critical parameters. See the below example and execute it
 ```
 #!/bin/bash
