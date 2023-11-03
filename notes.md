@@ -780,16 +780,16 @@ echo "My shell used id $0 and the options passed are $-"
 ![Alt text](shots/42.PNG)
 
 * The options set are as follows :
-    * h: short for hash all
-    * i: Shows it's interactive
-    * m: short for monitor
-    * B: allows brace expansion. “`mkdir dir{1,2}
-    * H: allows history expansion of running commands
+    * h : short for hash all
+    * i : Shows it's interactive
+    * m : short for monitor
+    * B : allows brace expansion : “`mkdir dir{1,2}
+    * H : allows history expansion of running commands
 
 ### Setting default values to parameters
 
-* -z    Checks if the given string operand size is zero; if it is zero length, then it returns true.    [ -z $a ] is not true.
-* -n    Checks if the given string operand size is non-zero; if it is nonzero length, then it returns true.    [ -n $a ] is not false.
+* -z : Checks if the given string operand size is zero; if it is zero length, then it returns true.    [ -z $a ] is not true.
+* -n : Checks if the given string operand size is non-zero; if it is non-zero length, then it returns true.    [ -n $a ] is not false.
 * It's often a good practice to assign default values for non-critical parameters. See the below example and execute it
 ```
 #!/bin/bash
@@ -848,12 +848,12 @@ ${parameter:-default}
 
 * Let's try to understand :
 
-    * for loops
-    * The internal field separator
+    * For loops
+    * Internal field separator
     * Counting directories & files
     * Nested Loops
     * Redirecting loop output
-    * while and until loops
+    * While and Until loops
 
 * Sample for script
 ```
@@ -887,7 +887,7 @@ done
 ### Internal Field Separator
 
 * By default the IFS value has one of (space, newline or tab)
-* Let's assume you want o iterate over : _**text.txt**_
+* Let's assume you want to iterate over : _**text.txt**_
 ```
 Hello, 
 This is Linux
@@ -906,7 +906,7 @@ done
 ![Alt text](shots/46.PNG)
 
 * What should be done to this script to iterate over lines? 
-* Now add IFS=$’\n’ to the shell script and this will do the trick _**ifs.sh**_
+* Now add IFS=$’\n’ to the shell script _**ifs.sh**_ and this will do the trick 
 ```
 #!/bin/bash
 file="text.txt"
@@ -920,7 +920,7 @@ done
 
 ### Iterating through directories and files
 
-* To do this we can write a very simple for loop
+* To do this we can write a very simple _**for loop**_
 * Exercise: Find mistake in the following shell script
 ```
 #!/bin/bash
@@ -969,9 +969,9 @@ do
     done >> rowscols.txt
 done
 ```
-### While and until
+### While and Until
 
-* Example of while
+* Example of While
 ```
 $COUNT=20
 while [ $COUNT -gt 0 ] ; 
