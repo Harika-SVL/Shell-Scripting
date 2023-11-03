@@ -1339,4 +1339,65 @@ echo $name
 echo $surname
 ```
 
+### Returning Text from functions
+
+* Look at the following script
+```
+#!/bin/bash
+return_using_globalvar() {
+    return_value="How are you"
+}
+
+print_message() {
+    input="$1"
+    echo "Message is ${input}"
+    
+}
+
+return_text_by_echo() {
+    input="$1"
+    echo "Message is ${input}"
+}
+
+# solution 1: Using global variables
+return_using_globalvar
+echo "${return_value}"
+
+# solution 2: Read the output
+read -p "Enter your message "
+return_test=$(return_text_by_echo "$REPLY")
+echo "$return_test"
+```
+### Recursive Functions
+
+* Function that calls itself is recursive functions
+```
+#!/bin/bash
+
+calculate_factorial() {
+    if [ $1 -eq 1 ]
+    then
+        echo 1
+    else
+        local var=$(( $1 - 1 ))
+        local res=$(calculate_factorial $var)
+        echo $(( $res * $1 ))
+    fi
+
+}
+
+read -p "Enter a number: " val
+factorial=$(calculate_factorial $val)
+echo "Factorial of $val is: $factorial"
+```
+* Exercise:
+
+1. Write a function to download a file from internet to desired location
+```
+download_item "<url>" "<location>"
+```
+2. Write a function to extract a tar to a specific location
+```
+untar_file <tar_location> <extract_location>
+```
 
