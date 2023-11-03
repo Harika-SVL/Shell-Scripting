@@ -765,13 +765,13 @@ fi
 * $0 $1 …
 * $# : count the no.of arguments passed
 * $-:
-    * Create a simple script and execute
+    * Create a simple script and execute _**specialparameters.sh**_
 ```
 #!/bin/bash
 
 echo "My shell used id $0 and the options passed are $-"
 ```
-* Directly execute the following statement in terminal :
+* Directly execute the following statement in terminal _**specialparameters.sh**_ :
 ```
 echo "My shell used id $0 and the options passed are $-"
 ```
@@ -781,7 +781,7 @@ echo "My shell used id $0 and the options passed are $-"
 
 * The options set are as follows :
     * h: short for hash all
-    * i: Shows it's and interactive
+    * i: Shows it's interactive
     * m: short for monitor
     * B: allows brace expansion. “`mkdir dir{1,2}
     * H: allows history expansion of running commands
