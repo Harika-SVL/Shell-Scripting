@@ -1026,7 +1026,7 @@ cat checkservers.out
 ```
 ### Building Blocks for reusability : Functions
 
-* DRY principle(Don’t Repeat Yourself)
+* DRY principle (Don’t Repeat Yourself)
 * We will cover the following aspects :
     * Introduction
     * Passing Parameters to the functions
@@ -1037,6 +1037,7 @@ cat checkservers.out
 * Execute `declare -F` in the bash. The output of this command might vary with distribution
 
 ![Alt text](shots/48.PNG)
+
 ![Alt text](shots/49.PNG)
 
 * Functions can be created using the following two syntaxes
@@ -1080,9 +1081,9 @@ backup_file() {
 
 backup_file "/home/ubuntu/1.txt"
 ```
-### How to pass arrays to the functions
+### How to pass arrays to the functions ?
 
-* Lets pass arguments to shell script which in turn passes array to the function
+* Let's pass arguments to shell script which in turn passes array to the function
 ```
 #!/bin/bash
 display_array() {
@@ -1107,13 +1108,13 @@ echo "The orginal array for test input 1 is ${test_input_1[*]}"
 echo "Calling function"
 display_array ${test_input_1[*]}
 ```
-* Execute the following commands as shown below
+* Execute the following commands as shown below :
 
 ![Alt text](shots/50.PNG)
 
 ### Variable scope
 
-* By default variables inside the function are global variables
+* By default, variables inside the function are _**Global Variables**_
 ```
 #!/bin/bash
 
@@ -1129,7 +1130,7 @@ testfunction
 echo "$test_variable_1"
 echo "$test_variable_2"
 ``` 
-* In shell if your variable has to be local inside function, you have to explicit
+* In shell, if your variable has to be local inside function, you have to explicit
 ```
 #!/bin/bash
 
