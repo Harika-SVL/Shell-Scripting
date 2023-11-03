@@ -1081,6 +1081,50 @@ backup_file() {
 
 backup_file "/home/ubuntu/1.txt"
 ```
+#### Example : 1
+```
+#!/bin/bash
+
+hello_world () {
+   echo 'hello, world'
+}
+
+hello_world
+```
+#### Example : 
+```
+#!/bin/bash
+
+num1='a'
+num2='b'
+
+alpha(){
+num1='c'
+num2='d'
+
+echo first is $num1 and second is $num2
+
+}
+
+echo before $num1 and $num2
+
+alpha
+
+echo after $num1 and $num2
+```
+#### Example : 3
+```
+#!/bin/bash
+
+my_function () {
+  echo "some result"
+  return 55
+}
+
+my_function
+echo $?
+```
+
 ### How to pass arrays to the functions ?
 
 * Let's pass arguments to shell script which in turn passes array to the function
@@ -1094,8 +1138,6 @@ display_array() {
         echo "Argument is ${item}"
     done
 }
-
-
 
 test_input_1=(1 2 3 4 5)
 
@@ -1111,6 +1153,34 @@ display_array ${test_input_1[*]}
 * Execute the following commands as shown below :
 
 ![Alt text](shots/50.PNG)
+
+#### Example : 1
+```
+#!/bin/bash
+
+var=(1 2 3 4 5)
+
+echo ${var[@]}
+```
+#### Example : 2
+```
+#!/bin/bash
+
+var=(1 2 3 4 5)
+
+echo ${var[@]:1:3}
+```
+#### Example : 3
+```
+#!/bin/bash
+
+work(){
+        var=(1 2 3 4 5)
+        echo ${var[@]}
+}
+
+work
+```
 
 ### Variable scope
 
@@ -1149,6 +1219,37 @@ echo "$test_variable_1"
 echo "$test_variable_2"
 echo "Outside function: $test_variable_3"
 ```
+#### Example : 1
+```
+#!/bin/bash
+
+work(){
+var=(1 2 3 4 5)
+}
+
+array(){
+work
+echo ${var[@]}
+}
+
+array
+```
+#### Exmple : 2
+```
+#!/bin/bash
+
+work(){
+        echo $(($num1+$num2))
+}
+
+array(){
+num1=1
+num2=2
+work
+}
+
+array
+```
 ### Returning values from functions
 
 * Shell sample
@@ -1164,5 +1265,78 @@ $reply=$print_message "1"}
 echo $reply
 ```
 * Try to fix the issue in above script to get the reply from function
+
+* Using _**GLOBAL VARIABLES**_
+
+#### Example : 1
+```
+hello() {
+var='Hello friend.'
+echo "$var"
+}
+
+greeting=$(hello)
+echo $greeting
+```
+#### Example : 2
+```
+hello() {
+echo $1
+}
+
+greeting=$(hello "mybro")
+echo $greeting
+```
+* Using _**LOCAL VARIABLE**_
+
+#### Example :
+```
+#!/bin/bash
+function first () {
+  local x="HelloNew"
+echo "Inside first function x=$x"
+
+}
+
+first
+echo "Outside first function x = $x"
+
+output:
+Inside first function x=HelloNew
+Outside first function x =
+```
+* Using _**GLOBAL VARIABLE**_
+
+#### Example :
+```
+#!/bin/bash
+function first () {
+x="Hello Geek"
+echo "Inside first function x= $x"
+
+}
+
+first
+echo "Outside first function x = $x"
+
+output:
+Inside first function x=Hello Geek
+Outside first function x = Hello Geek
+```
+* Using _**LOCAL & GLOBAL VARIABLE**_
+
+#### Example :
+```
+#!/bin/bash
+first() {
+local name="qt"
+echo $name
+surname="devops"
+}
+
+first
+echo $name
+echo $surname
+```
 
 
