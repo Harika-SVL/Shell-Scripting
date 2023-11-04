@@ -1514,7 +1514,11 @@ return FALSE;
 ```
 * \ ^ $ . [ ( ) | + ? {
 ```
-* ALTERNATION : This is how we specify the alternative paths generally represented by 
+
+* ALTERNATION : This is how we specify the alternative paths generally represented by |
+
+![Alt text](shots/57.PNG)
+
    * RANGES : Ranges specify the range characters
    * ESCAPE SEQUENCE : To match the character which is in metacharacter list just add a backslash `\`
    * CHARACTER CLASSES :
@@ -1527,5 +1531,95 @@ return FALSE;
 [Refer here : https://remram44.github.io/regex-cheatsheet/regex.html ]
 
 * Greedy and Non-Greedy Regular expressions
+
+### Next Steps
+
+* What is a Capture Group?
+* How to use regex in grep & sed
+
+### Capture Groups
+
+* Capture Groups are represented in parenthesis
+
+### Refer the below websites
+
+* https://regexr.com/
+* https://remram44.github.io/regex-cheatsheet/regex.html
+
+### Grep
+
+* The grep command searches for a ``pattern of characters` in a file or multiple files
+* Syntax
+```
+grep <token> filename
+```
+
+
+* In most cases we leverage piping concept of linux in using grep
+
+
+
+* Meta characters in grep :
+    1.  ^ : Beginning of line (anchor) ^ubuntu
+    2.  : ending of line (anchor) ubuntu
+    3.  . : any one character
+        * : Zero or more characters
+    4.  [] : Matches one in the character set
+    5.  [^] : Matches one not in the character set
+    6.  \w, \W, \b
+* Grep supports Basic Regular expressions (BRE) by default and in Grep we can use Extended Regular expressions (GRE)
+```
+grep 'pattern' filname(s)   => Basic Regular Expression (BRE)
+grep -G 'pattern' filname(s)   => Basic Regular Expression (BRE)
+grep -E 'pattern' filename  => Extended regular Expressions (ERE)
+grep -F 'pattern' file => No RE meta characters
+```
+* Classes :
+   * [:alnum:] alphanumeric characters
+   * [:alpha:]
+   * [:cntrl:]
+   * [:digit:]
+   * [:lower:]
+   * [:punct:]
+   * [:upper:]
+   * [:space:]
+* Let's take this as an example :
+```
+northwest	nw		John Cena		34		3.5
+west		we		Big Show		43		1.5
+southwest	sw		Roman Reigns	28		2.5
+northeast	ne		Becky Lync		26		4.5
+```
+* Using grep to match all lines with `nw`
+
+
+
+* Find all the lines which begin with `n` => cat sales.dat| grep '^n'
+* Find all the lines that contain `.5` in it =
+
+
+
+* Download some sample 
+
+[From here : https://excelbianalytics.com/wp/ ]
+* We are using 1000 samples
+```
+Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit
+Middle East and North Africa,Libya,Cosmetics,Offline,M,10/18/2014,686800706,10/31/2014,8446,437.20,263.33,3692591.20,2224085.18,1468506.02
+North America,Canada,Vegetables,Online,M,11/7/2011,185941302,12/8/2011,3018,154.06,90.93,464953.08,274426.74,190526.34
+Middle East and North Africa,Libya,Baby Food,Offline,C,10/31/2016,246222341,12/9/2016,1517,255.28,159.42,387259.76,241840.14,145419.62
+Asia,Japan,Cereal,Offline,C,4/10/2010,161442649,5/12/2010,3322,205.70,117.11,683335.40,389039.42,294295.98
+Sub-Saharan Africa,Chad,Fruits,Offline,H,8/16/2011,645713555,8/31/2011,9845,9.33,6.92,91853.85,68127.40,23726.45
+Europe,Armenia,Cereal,Online,H,11/24/2014,683458888,12/28/2014,9528,205.70,117.11,1959909.60,1115824.08,844085.52
+Sub-Saharan Africa,Eritrea,Cereal,Online,H,3/4/2015,679414975,4/17/2015,2844,205.70,117.11,585010.80,333060.84,251949.96
+Europe,Montenegro,Clothes,Offline,M,5/17/2012,208630645,6/28/2012,7299,109.28,35.84,797634.72,261596.16,536038.56
+Central America and the Caribbean,Jamaica,Vegetables,Online,H,1/29/2015,266467225,3/7/2015,2428,154.06,90.93,374057.68,220778.04,153279.64
+```
+* Match all the lines which start with vowel using extented grep
+```
+cat sales.csv | grep -E '^[AEIOU]'
+cat sales.csv | egrep '^[AEIOU]'
+```
+
 
 
