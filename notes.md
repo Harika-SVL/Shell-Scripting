@@ -1637,9 +1637,9 @@ cat sales.csv | egrep '^[AEIOU]'
 * Write a extended regex with alternations
 * Let's look for examples :
 
-
-
-
+![Alt text](shots/63.PNG)
+![Alt text](shots/64.PNG)
+![Alt text](shots/65.PNG)
 
 * Grep Options
     1. -b
@@ -1652,16 +1652,19 @@ cat sales.csv | egrep '^[AEIOU]'
     8. -v
     9. -w
 
-
-
-
+![Alt text](shots/66.PNG)
+![Alt text](shots/67.PNG)
+![Alt text](shots/68.PNG)
 
 ### Sed
 
 * This is streamline, non-interactive editor
 * Version of sed
 
-
+![Alt text](shots/69.PNG)
+![Alt text](shots/70.PNG)
+![Alt text](shots/71.PNG)
+![Alt text](shots/72.PNG)
 
 * File used in the class for sales.csv
 
@@ -1701,8 +1704,9 @@ sed '1,3v ' sales.csv
 ```
    * Examples
 
-
-
+![Alt text](shots/73.PNG)
+![Alt text](shots/74.PNG)
+![Alt text](shots/75.PNG)
 
 * Write a sed command to print
 
@@ -1724,6 +1728,9 @@ awk 'pattern' '{action}' filename
 
 [Refer here : https://www.shortcutfoo.com/app/dojos/awk/cheatsheet ]
 
+![Alt text](shots/76.PNG)
+![Alt text](shots/77.PNG)
+
 ### Shell scripts
 
 * How to deal with named arguments
@@ -1732,7 +1739,7 @@ awk 'pattern' '{action}' filename
 ```
 * Let's understand an important operator called as _**shift**_
     * When the run shift the current positional parameters are `shifted left n times` default value of n is 1
-    * Look at the below example :
+    * Look at the below example _**shift.sh**_:
 ```
 #!/bin/bash
 
@@ -1755,8 +1762,7 @@ echo "first argument is $1"
 ```
 * The output of execution with various examples is
 
-
-
+![Alt text](shots/78.PNG)
 
 * We can use `Shift operator` and a `While loop` to parse arguments
 ```
