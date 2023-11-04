@@ -1519,7 +1519,7 @@ return FALSE;
 
 ![Alt text](shots/57.PNG)
 
-   * RANGES : Ranges specify the range characters
+   * RANGES : Ranges specify the range  of characters
    * ESCAPE SEQUENCE : To match the character which is in metacharacter list just add a backslash `\`
    * CHARACTER CLASSES :
 
