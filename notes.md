@@ -1404,37 +1404,38 @@ untar_file <tar_location> <extract_location>
 
 * They are also referred as regex, RegEx
 * Truth about Regex:
-    * Most of the cases regex is defined as A regular expression is a declarative specification of describing the textual structure to match string
-    * The problem with above definition is regular expressions are not declarative, A regular expression is imperative. Regular expression is subroutine/function/method
+    * Most of the cases regex is defined as ' A regular expression is a declarative specification of describing the textual structure to match string '
+    * The problem with above definition is regular expressions are not `declarative`, but a regular expression is _**imperative**_ . Regular expression is `subroutine/function/method`
 
-* In What Language we write regular expressions. In Regular expressions we have six major dialects
-     1. BRE:
-        * This is basic regular expressions.
-        * TOOLS: ed, sed, grep
-     2. ERE:
+* In what language we write regular expressions ?
+ *  In Regular expressions we have six major dialects :
+     1. BRE :
+        * This is basic regular expressions
+        * TOOLS : ed, sed, grep
+     2. ERE :
         * GNU extended regular expressions
         * TOOLS & LANGUAGES : egrep, gawk, Notepad++, TCL
-     3. EMACS:
-        * This is Emacs regular expressions
-        * TOOLS: Emacs
-     4. VIM:
-        * TOOLS: VIM
-     5. PCRE:
-        * This is PERL(5) compatible regular expressions
-        * TOOLS & LANGUAGES: PERL, .NET, APACHE, C#, Java, JavaScript, PHP, Powershell, Python, R, Ruby,
-     6. PSIX:
+     3. EMACS :
+        * Emacs regular expressions
+        * TOOLS : Emacs
+     4. VIM :
+        * TOOLS : VIM
+     5. PCRE :
+        * PERL(5) compatible regular expressions
+        * TOOLS & LANGUAGES : PERL, .NET, APACHE, C#, Java, JavaScript, PHP, Powershell, Python, R, Ruby,
+     6. PSIX :
         * Perl 6 Regular Expressions
-        * LANGUAGES: Perl 6
+        * LANGUAGES : Perl 6
 
-* These dialects have similarities & dissimilarities. There are relationships b/w dialects
+* These dialects have similarities & dissimilarities and also relationships b/w them
 
 ![Alt text](shots/51.PNG)
 
-* How are regular expressions implemented?
+* How are regular expressions implemented ?
 
-    * Theoretically Regular expression are implemented on a Finite State machine(FSM). But Languages Practically implement regular expressions on stack-based machine.
-    * To understand regular expressions we will be using FSM
-    * To search for a word cat in the text sequence in all six dialects mentioned above the regex is /cat/
+    * Theoretically `Regular expression` are implemented on a _**Finite State machine(FSM)**_. But languages practically implement regular expressions on `stack-based machine`.
+    * To understand regular expressions we will be using _**FSM**_
+    * For example, to search for a word cat in the text sequence in all six dialects mentioned above the regex is `/cat/`
     * Let's represent cat in transition graph
 
 ![Alt text](shots/52.PNG)
@@ -1457,10 +1458,9 @@ for(index=0; index<len(message); index++) {
 
         return TRUE;
 
-
-
     }
 }
 return FALSE;
 ``` 
+
 
