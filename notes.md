@@ -1462,5 +1462,46 @@ for(index=0; index<len(message); index++) {
 }
 return FALSE;
 ``` 
+### How are Regexes Implemented ?
+
+* Let's look at very simple regular expressions
+* Let's use this website for understanding regex 
+  
+  [Refer here : https://regexr.com/ ]
+
+* Let's look at a simple expression `/free/`
+
+![Alt text](shots/53.PNG)
+
+* Now let's try to write a expression `/free|fred/`
+    * The possibilities in implementation are : 
+
+![Alt text](shots/54.PNG)
+
+![Alt text](shots/55.PNG)
+
+    
+* Regexes use NDFA because of simple implementation
+* In Regex every character is a instruction
+* Now let's look at complex regex abc|ab(s(t|e)|su)
+
+![Alt text](shots/56.PNG)
+
+* Next Steps:
+
+   1.Regex Instruction set
+
+   2. Meta-syntax
+
+   3. Control Structures
+
+   4. Substring Extraction & Assertions
+
+* Exercise:
+
+    * Write a shell script to install chef server, for both redhat and ubuntu and use functions
+
+[Refer here : https://docs.chef.io/server/install_server/#standalone ]
+
 
 
