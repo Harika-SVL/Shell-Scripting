@@ -1540,6 +1540,7 @@ return FALSE;
 ### Capture Groups
 
 * Capture Groups are represented in parenthesis
+* They give the information about whether if there is a match and also what is the match
 
 ### Refer the below websites
 
@@ -1560,30 +1561,39 @@ grep <token> filename
 
 
 * Meta characters in grep :
-    1.  ^ : Beginning of line (anchor) ^ubuntu
-    2.  : ending of line (anchor) ubuntu
-    3.  . : any one character
-        * : Zero or more characters
-    4.  [] : Matches one in the character set
-    5.  [^] : Matches one not in the character set
-    6.  \w, \W, \b
+    
+1. `^` => Beginning of line (anchor) `^ubuntu`
+    
+2. `$` => ending of line (anchor) `ubuntu$`
+    
+3. `.` => any one character
+    
+4. `*` => Zero or more characters
+    
+5. `[]` => Matches one in the character set
+    
+6. `[^]` => Matches one not in the character set
+    
+7. `\w, \W, \b`
+
 * Grep supports Basic Regular expressions (BRE) by default and in Grep we can use Extended Regular expressions (GRE)
 ```
-grep 'pattern' filname(s)   => Basic Regular Expression (BRE)
-grep -G 'pattern' filname(s)   => Basic Regular Expression (BRE)
-grep -E 'pattern' filename  => Extended regular Expressions (ERE)
-grep -F 'pattern' file => No RE meta characters
+grep 'pattern' filname(s)    => Basic Regular Expression (BRE)
+grep -G 'pattern' filname(s) => Basic Regular Expression (BRE)
+grep -E 'pattern' filename   => Extended regular Expressions (ERE)
+grep -F 'pattern' file       => No RE meta characters
 ```
 * Classes :
    * [:alnum:] alphanumeric characters
-   * [:alpha:]
-   * [:cntrl:]
-   * [:digit:]
-   * [:lower:]
-   * [:punct:]
-   * [:upper:]
-   * [:space:]
-* Let's take this as an example :
+   * [:alpha:] alphabetic charaters
+   * [:cntrl:] control characters
+   * [:digit:] numeric characters
+   * [:lower:] lowercase characters
+   * [:punct:] punctuation characters
+   * [:upper:] uppercase characters
+   * [:space:] separating characters
+
+* Let's take this as an example _**sales.dat**_ (data/sales.dat):
 ```
 northwest	nw		John Cena		34		3.5
 west		we		Big Show		43		1.5
