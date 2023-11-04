@@ -1620,6 +1620,171 @@ Central America and the Caribbean,Jamaica,Vegetables,Online,H,1/29/2015,26646722
 cat sales.csv | grep -E '^[AEIOU]'
 cat sales.csv | egrep '^[AEIOU]'
 ```
+### Extended grep (grep -E or EGREP)
+
+* Write a extended regex with alternations
+* Let's look for examples :
 
 
 
+
+
+* Grep Options
+    1. -b
+    2. -c
+    3. -h
+    4. -i
+    5. -l
+    6. -n
+    7. -s
+    8. -v
+    9. -w
+
+
+
+
+
+### Sed
+
+* This is streamline, non-interactive editor
+* Version of sed
+
+
+
+* File used in the class for sales.csv
+
+[Refer here : https://gist.githubusercontent.com/shaikkhajaibrahim/8eb405804c97dba868ee9e359109871d/raw/901edf320164af623eba04f5affbbc4ab1e93038/sales.csv ]
+```
+wget https://gist.githubusercontent.com/shaikkhajaibrahim/8eb405804c97dba868ee9e359109871d/raw/901edf320164af623eba04f5affbbc4ab1e93038/sales.csv
+```
+* Sed cheatsheet 
+
+[Refer here : https://lzone.de/cheat-sheet/sed ]
+
+* Sed Commands:
+
+   * a\
+   * b label
+   * c\
+   * d
+   * D
+   * i\
+   * h
+   * H
+   * g
+   * G
+   * l
+   * n
+   * N
+   * P
+   * q
+   * w
+   * W
+   * s/re/string/
+* Error messages :
+
+   1. Unknown command
+```
+sed '1,3v ' sales.csv
+```
+   * Examples
+
+
+
+
+* Write a sed command to print
+
+    * all the records having Libya
+    * Replace Libya with UAE
+    * Insert a line for all the records which have Canada with any text
+    * Insert a line at the end of the file
+
+### AWK
+
+* AWK is programming language for manipulating data and generating reports
+* AWK format :
+```
+awk 'pattern' filename
+awk '{action}' filename
+awk 'pattern' '{action}' filename
+```
+* Search for any cheat sheet of awk
+
+[Refer here : https://www.shortcutfoo.com/app/dojos/awk/cheatsheet ]
+
+### Shell scripts
+
+* How to deal with named arguments
+```
+./installjava.sh --package-name openjdk8-jdk
+```
+* Let's understand an important operator called as _**shift**_
+    * When the run shift the current positional parameters are `shifted left n times` default value of n is 1
+    * Look at the below example :
+```
+#!/bin/bash
+
+echo "arguments passed are: $@"
+echo "total number of arguments $#"
+echo "first argument is $1"
+shift
+echo "after shift"
+
+echo "arguments passed are: $@"
+echo "total number of arguments $#"
+echo "first argument is $1"
+
+shift 2
+
+echo "after shift 2"
+echo "arguments passed are: $@"
+echo "total number of arguments $#"
+echo "first argument is $1"
+```
+* The output of execution with various examples is
+
+
+
+
+* We can use `Shift operator` and a `While loop` to parse arguments
+```
+#!/bin/bash
+#./calc.sh --print 1 --square 2
+#./calc.sh -p 1 -s 2
+
+while [[ $# -gt 0]]
+do
+    key="$1"
+    case $key in 
+        -p|--print)
+        echo "$2"
+        shift 2
+        ;;
+        -s| --square)
+            number="$2"
+            echo $((number * number))
+        shift 2
+        ;;
+    esac
+done
+```
+* Example : Simple square and cube calculator
+```
+#!/bin/bash
+
+while getopts "s:c:" option;
+do 
+    case "$option" in
+        s)
+            value=$OPTARG
+            echo "$((value * value))"
+            ;;
+        c)
+            value=$OPTARG
+            echo "$((value * value * value))"
+            ;;
+
+    esac
+done
+```
+* Exercise : Extend this script to display help when user passes `-h` and also support long options
