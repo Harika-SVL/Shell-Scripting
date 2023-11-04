@@ -1404,25 +1404,25 @@ untar_file <tar_location> <extract_location>
 
 * They are also referred as regex, RegEx
 * Truth about Regex:
-    1. Most of the cases regex is defined as A regular expression is a declarative specification of describing the textual structure to match string
-    2. The problem with above definition is regular expressions are not declarative, A regular expression is imperative. Regular expression is subroutine/function/method
+    * Most of the cases regex is defined as A regular expression is a declarative specification of describing the textual structure to match string
+    * The problem with above definition is regular expressions are not declarative, A regular expression is imperative. Regular expression is subroutine/function/method
 
 * In What Language we write regular expressions. In Regular expressions we have six major dialects
-    1. BRE:
+     1. BRE:
         * This is basic regular expressions.
         * TOOLS: ed, sed, grep
-    2. ERE:
+     2. ERE:
         * GNU extended regular expressions
         * TOOLS & LANGUAGES : egrep, gawk, Notepad++, TCL
-    3. EMACS:
+     3. EMACS:
         * This is Emacs regular expressions
         * TOOLS: Emacs
-    4. VIM:
+     4. VIM:
         * TOOLS: VIM
-    5. PCRE:
+     5. PCRE:
         * This is PERL(5) compatible regular expressions
         * TOOLS & LANGUAGES: PERL, .NET, APACHE, C#, Java, JavaScript, PHP, Powershell, Python, R, Ruby,
-    6. PSIX:
+     6. PSIX:
         * Perl 6 Regular Expressions
         * LANGUAGES: Perl 6
 
