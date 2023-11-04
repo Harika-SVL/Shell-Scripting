@@ -1549,14 +1549,14 @@ return FALSE;
 
 ### Grep
 
-* The grep command searches for a ``pattern of characters` in a file or multiple files
+* The grep command searches for a `pattern of characters` in a file or multiple files
 * Syntax
 ```
 grep <token> filename
 ```
 ![Alt text](shots/58.PNG)
 
-* In most cases we leverage piping concept of linux in using grep
+* In most cases we leverage piping concept of linux in using grep ( | grep )
 
 ![Alt text](shots/59.PNG)
 
@@ -1605,14 +1605,14 @@ northeast	ne		Becky Lync		26		4.5
 ![Alt text](shots/60.PNG)
 
 * Find all the lines which begin with `n` => cat sales.dat| grep '^n'
-* Find all the lines that contain `.5` in it =
+* Find all the lines that contain `.5` in it => cat sales.dat | grep '\.5'
 
 ![Alt text](shots/61.PNG)
 
 * Download some sample 
 
 [From here : https://excelbianalytics.com/wp/ ]
-* We are using 1000 samples
+* We are using 1000 samples :
 ```
 Region,Country,Item Type,Sales Channel,Order Priority,Order Date,Order ID,Ship Date,Units Sold,Unit Price,Unit Cost,Total Revenue,Total Cost,Total Profit
 Middle East and North Africa,Libya,Cosmetics,Offline,M,10/18/2014,686800706,10/31/2014,8446,437.20,263.33,3692591.20,2224085.18,1468506.02
@@ -1641,7 +1641,7 @@ cat sales.csv | egrep '^[AEIOU]'
 ![Alt text](shots/64.PNG)
 ![Alt text](shots/65.PNG)
 
-* Grep Options
+* Grep Options : 
     1. -b
     2. -c
     3. -h
@@ -1666,7 +1666,7 @@ cat sales.csv | egrep '^[AEIOU]'
 ![Alt text](shots/71.PNG)
 ![Alt text](shots/72.PNG)
 
-* File used in the class for sales.csv
+* File used is `sales.csv` :
 
 [Refer here : https://gist.githubusercontent.com/shaikkhajaibrahim/8eb405804c97dba868ee9e359109871d/raw/901edf320164af623eba04f5affbbc4ab1e93038/sales.csv ]
 ```
@@ -1676,7 +1676,7 @@ wget https://gist.githubusercontent.com/shaikkhajaibrahim/8eb405804c97dba868ee9e
 
 [Refer here : https://lzone.de/cheat-sheet/sed ]
 
-* Sed Commands:
+* Sed Commands :
 
    * a\
    * b label
@@ -1708,7 +1708,7 @@ sed '1,3v ' sales.csv
 ![Alt text](shots/74.PNG)
 ![Alt text](shots/75.PNG)
 
-* Write a sed command to print
+* Write a sed command to print the following : 
 
     * all the records having Libya
     * Replace Libya with UAE
@@ -1717,7 +1717,7 @@ sed '1,3v ' sales.csv
 
 ### AWK
 
-* AWK is programming language for manipulating data and generating reports
+* AWK is programming language for `manipulating data` and `generating reports`
 * AWK format :
 ```
 awk 'pattern' filename
@@ -1733,7 +1733,7 @@ awk 'pattern' '{action}' filename
 
 ### Shell scripts
 
-* How to deal with named arguments
+* How to deal with named arguments ?
 ```
 ./installjava.sh --package-name openjdk8-jdk
 ```
@@ -1760,7 +1760,7 @@ echo "arguments passed are: $@"
 echo "total number of arguments $#"
 echo "first argument is $1"
 ```
-* The output of execution with various examples is
+* The output of execution with various examples is :
 
 ![Alt text](shots/78.PNG)
 
