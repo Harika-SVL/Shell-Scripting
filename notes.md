@@ -1503,5 +1503,28 @@ return FALSE;
 
 [Refer here : https://docs.chef.io/server/install_server/#standalone ]
 
+### Regular Expression Instruction Set
 
+* All the alphanumerics plus some punctuations are Instruction sets
+* They would tell Regex engine to Match
+* Metasyntax: Is a special syntax given to characters and these characters have a special meaning depending on dialect you choose
+```
+* \ ^ $ . [ ( ) | + ? {
+```
+* ALTERNATION : This is how we specify the alternative paths generally represented by 
+* RANGES : Ranges specify the range characters
+* ESCAPE SEQUENCE : To Match the character which is in metacharacter list just add a backslash `\`
+* CHARACTER CLASSES :
 
+  * Word = \w
+  * Not Word = \W
+  * digit = \d
+  * whitespace = \s
+[Refer here : https://remram44.github.io/regex-cheatsheet/regex.html ]
+
+* Greedy and Non-Greedy Regular expressions
+
+### Next Steps
+
+* What is a Capture Group ?
+* How to use regex in grep & sed ?
