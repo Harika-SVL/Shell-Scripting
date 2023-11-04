@@ -1554,11 +1554,11 @@ return FALSE;
 ```
 grep <token> filename
 ```
-
+![Alt text](shots/58.PNG)
 
 * In most cases we leverage piping concept of linux in using grep
 
-
+![Alt text](shots/59.PNG)
 
 * Meta characters in grep :
     
@@ -1602,12 +1602,12 @@ northeast	ne		Becky Lync		26		4.5
 ```
 * Using grep to match all lines with `nw`
 
-
+![Alt text](shots/60.PNG)
 
 * Find all the lines which begin with `n` => cat sales.dat| grep '^n'
 * Find all the lines that contain `.5` in it =
 
-
+![Alt text](shots/61.PNG)
 
 * Download some sample 
 
@@ -1630,6 +1630,8 @@ Central America and the Caribbean,Jamaica,Vegetables,Online,H,1/29/2015,26646722
 cat sales.csv | grep -E '^[AEIOU]'
 cat sales.csv | egrep '^[AEIOU]'
 ```
+![Alt text](shots/62.PNG)
+
 ### Extended grep (grep -E or EGREP)
 
 * Write a extended regex with alternations
