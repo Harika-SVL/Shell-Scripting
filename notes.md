@@ -1410,7 +1410,7 @@ untar_file <tar_location> <extract_location>
 * In what language we write regular expressions ?
  *  In Regular expressions we have six major dialects :
      1. BRE :
-        * This is basic regular expressions
+        * Basic Regular Expressions
         * TOOLS : ed, sed, grep
      2. ERE :
         * GNU extended regular expressions
@@ -1462,10 +1462,10 @@ for(index=0; index<len(message); index++) {
 }
 return FALSE;
 ``` 
-### How are Regexes Implemented ?
+### How are RegExe's Implemented ?
 
 * Let's look at very simple regular expressions
-* Let's use this website for understanding regex 
+* Use this website for understanding regex 
   
   [Refer here : https://regexr.com/ ]
 
@@ -1481,21 +1481,21 @@ return FALSE;
 ![Alt text](shots/55.PNG)
 
     
-* Regexes use NDFA because of simple implementation
-* In Regex every character is a instruction
+* RegExes use NDFA because of simple implementation
+* In Regex every character is an instruction
 * Now let's look at complex regex abc|ab(s(t|e)|su)
 
 ![Alt text](shots/56.PNG)
 
 * Next Steps:
 
-   1.Regex Instruction set
+    1. Regex Instruction set
 
-   2. Meta-syntax
+    2. Meta-syntax
 
-   3. Control Structures
+    3. Control Structures
 
-   4. Substring Extraction & Assertions
+    4. Substring Extraction & Assertions
 
 * Exercise:
 
@@ -1503,28 +1503,29 @@ return FALSE;
 
 [Refer here : https://docs.chef.io/server/install_server/#standalone ]
 
-### Regular Expression Instruction Set
+#### Regular Expression Instruction Set
 
 * All the alphanumerics plus some punctuations are Instruction sets
 * They would tell Regex engine to Match
-* Metasyntax: Is a special syntax given to characters and these characters have a special meaning depending on dialect you choose
+
+#### Metasyntax  
+
+* Is a special syntax given to characters and these characters have a special meaning depending on dialect you choose
 ```
 * \ ^ $ . [ ( ) | + ? {
 ```
 * ALTERNATION : This is how we specify the alternative paths generally represented by 
-* RANGES : Ranges specify the range characters
-* ESCAPE SEQUENCE : To Match the character which is in metacharacter list just add a backslash `\`
-* CHARACTER CLASSES :
+   * RANGES : Ranges specify the range characters
+   * ESCAPE SEQUENCE : To match the character which is in metacharacter list just add a backslash `\`
+   * CHARACTER CLASSES :
 
-  * Word = \w
-  * Not Word = \W
-  * digit = \d
-  * whitespace = \s
+     * Word = \w
+     * Not Word = \W
+     * Digit = \d
+     * Whitespace = \s
+
 [Refer here : https://remram44.github.io/regex-cheatsheet/regex.html ]
 
 * Greedy and Non-Greedy Regular expressions
 
-### Next Steps
 
-* What is a Capture Group ?
-* How to use regex in grep & sed ?
