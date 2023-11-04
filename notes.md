@@ -1483,7 +1483,7 @@ return FALSE;
     
 * RegExes use NDFA because of simple implementation
 * In Regex every character is an instruction
-* Now let's look at complex regex abc|ab(s(t|e)|su)
+* Now let's look at complex regex _abc|ab(s(t|e)|su)_
 
 ![Alt text](shots/56.PNG)
 
